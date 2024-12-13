@@ -22,6 +22,8 @@ export class PumpFunSDK {
         this.connection = this.program.provider.connection;
     }
     async createAndBuy(creator, mint, createTokenMetadata, buyAmountSol, slippageBasisPoints = 500n, priorityFees, commitment = DEFAULT_COMMITMENT, finality = DEFAULT_FINALITY) {
+        console.log("goes here");
+        console.log(buyAmountSol);
         let tokenMetadata = await this.createTokenMetadata(createTokenMetadata);
         let createTx = await this.getCreateInstructions(creator.publicKey, createTokenMetadata.name, createTokenMetadata.symbol, tokenMetadata.metadataUri, mint);
         let newTx = new Transaction().add(createTx);

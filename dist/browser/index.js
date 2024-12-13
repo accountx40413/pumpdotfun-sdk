@@ -19580,6 +19580,9 @@ class BondingCurveAccount {
 const DEFAULT_COMMITMENT = "finalized";
 const DEFAULT_FINALITY = "finalized";
 const calculateWithSlippageBuy = (amount, basisPoints) => {
+    console.log("calculate sllipage");
+    console.log("Type of amount:", typeof amount); // Should log "bigint"
+    console.log("Type of basisPoints:", typeof basisPoints); // Should log "bigint"
     return amount + (amount * basisPoints) / 10000n;
 };
 const calculateWithSlippageSell = (amount, basisPoints) => {

@@ -20,6 +20,10 @@ export const calculateWithSlippageBuy = (
   amount: bigint,
   basisPoints: bigint
 ) => {
+  console.log("calculate sllipage");
+  console.log("Type of amount:", typeof amount); // Should log "bigint"
+  console.log("Type of basisPoints:", typeof basisPoints); // Should log "bigint"
+
   return amount + (amount * basisPoints) / 10000n;
 };
 

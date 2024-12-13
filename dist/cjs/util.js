@@ -6,6 +6,9 @@ const web3_js_1 = require("@solana/web3.js");
 exports.DEFAULT_COMMITMENT = "finalized";
 exports.DEFAULT_FINALITY = "finalized";
 const calculateWithSlippageBuy = (amount, basisPoints) => {
+    console.log("calculate sllipage");
+    console.log("Type of amount:", typeof amount); // Should log "bigint"
+    console.log("Type of basisPoints:", typeof basisPoints); // Should log "bigint"
     return amount + (amount * basisPoints) / 10000n;
 };
 exports.calculateWithSlippageBuy = calculateWithSlippageBuy;

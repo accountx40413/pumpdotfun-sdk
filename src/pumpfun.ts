@@ -72,7 +72,7 @@ export class PumpFunSDK {
     console.log("goes here");
     console.log(buyAmountSol);
     let tokenMetadata = await this.createTokenMetadata(createTokenMetadata);
-
+    console.log("got metadata");
     let createTx = await this.getCreateInstructions(
       creator.publicKey,
       createTokenMetadata.name,
@@ -80,8 +80,11 @@ export class PumpFunSDK {
       tokenMetadata.metadataUri,
       mint
     );
+    console.log("got instructions");
 
     let newTx = new Transaction().add(createTx);
+
+    console.log("got tx");
 
     if (buyAmountSol > 0) {
       console.log("sol more then 0");

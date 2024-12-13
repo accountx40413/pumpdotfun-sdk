@@ -24,13 +24,18 @@ class GlobalAccount {
         this.feeBasisPoints = feeBasisPoints;
     }
     getInitialBuyPrice(amount) {
+        console.log('goes to get initial buy price');
         if (amount <= 0n) {
             return 0n;
         }
         let n = this.initialVirtualSolReserves * this.initialVirtualTokenReserves;
+        console.log('get n');
         let i = this.initialVirtualSolReserves + amount;
+        console.log('got i');
         let r = n / i + 1n;
+        console.log('got r');
         let s = this.initialVirtualTokenReserves - r;
+        console.log('got s');
         return s < this.initialRealTokenReserves
             ? s
             : this.initialRealTokenReserves;

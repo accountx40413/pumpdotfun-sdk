@@ -84,8 +84,13 @@ export class PumpFunSDK {
     let newTx = new Transaction().add(createTx);
 
     if (buyAmountSol > 0) {
+      console.log("sol more then 0");
       const globalAccount = await this.getGlobalAccount(commitment);
+
       const buyAmount = globalAccount.getInitialBuyPrice(buyAmountSol);
+      console.log("get buy amount");
+
+
       const buyAmountWithSlippage = calculateWithSlippageBuy(
         buyAmountSol,
         slippageBasisPoints

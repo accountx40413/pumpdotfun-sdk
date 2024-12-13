@@ -28,8 +28,10 @@ export class PumpFunSDK {
         let createTx = await this.getCreateInstructions(creator.publicKey, createTokenMetadata.name, createTokenMetadata.symbol, tokenMetadata.metadataUri, mint);
         let newTx = new Transaction().add(createTx);
         if (buyAmountSol > 0) {
+            console.log("sol more then 0");
             const globalAccount = await this.getGlobalAccount(commitment);
             const buyAmount = globalAccount.getInitialBuyPrice(buyAmountSol);
+            console.log("get buy amount");
             const buyAmountWithSlippage = calculateWithSlippageBuy(buyAmountSol, slippageBasisPoints);
             const buyTx = await this.getBuyInstructions(creator.publicKey, mint.publicKey, globalAccount.feeRecipient, buyAmount, buyAmountWithSlippage);
             newTx.add(buyTx);

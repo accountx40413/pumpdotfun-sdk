@@ -92,13 +92,15 @@ export class PumpFunSDK {
       const globalAccount = await this.getGlobalAccount(commitment);
 
       const buyAmount = globalAccount.getInitialBuyPrice(buyAmountSol);
-      console.log("get buy amount");
+      console.log("get buy amountttttttt");
+      console.log(buyAmount);
 
 
       const buyAmountWithSlippage = calculateWithSlippageBuy(
         buyAmountSol,
         slippageBasisPoints
       );
+      console.log(buyAmountWithSlippage);
 
       const buyTx = await this.getBuyInstructions(
         creator.publicKey,

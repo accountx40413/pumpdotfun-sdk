@@ -69,7 +69,7 @@ export class PumpFunSDK {
     commitment: Commitment = DEFAULT_COMMITMENT,
     finality: Finality = DEFAULT_FINALITY
   ): Promise<TransactionResult> {
-    console.log("goes here");
+    console.log("goes hereeeeeeeeeeeeeeeeeeeeeee");
     console.log("new version");
     console.log(buyAmountSol);
     let tokenMetadata = await this.createTokenMetadata(createTokenMetadata);

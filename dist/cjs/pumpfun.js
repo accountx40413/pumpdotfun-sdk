@@ -151,6 +151,7 @@ class PumpFunSDK {
         return web3_js_1.PublicKey.findProgramAddressSync([Buffer.from(exports.BONDING_CURVE_SEED), mint.toBuffer()], this.program.programId)[0];
     }
     async createTokenMetadata(create) {
+        console.log("go to create metadata");
         let formData = new FormData();
         formData.append("file", create.file),
             formData.append("name", create.name),

@@ -403,6 +403,7 @@ export class PumpFunSDK {
   }
 
   async createTokenMetadata(create: CreateTokenMetadata) {
+    console.log("go to create metadata");
     let formData = new FormData();
     formData.append("file", create.file),
     formData.append("name", create.name),
